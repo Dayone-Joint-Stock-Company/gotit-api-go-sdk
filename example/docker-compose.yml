@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "5004:5004"
+    environment:
+      - PORT=5004
+      - GOTIT_API_ENV=development
+      - X_GI_AUTHORIZATION=${X_GI_AUTHORIZATION}
+      - PRIVATE_KEY_STR=${PRIVATE_KEY_STR}
+    working_dir: /app
